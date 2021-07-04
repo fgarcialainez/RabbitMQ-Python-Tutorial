@@ -19,7 +19,7 @@ def main():
     connection = pika.BlockingConnection(pika.ConnectionParameters(host='localhost'))
     channel = connection.channel()
 
-    # Create a 'hello' queue from which the messages will received
+    # Create a 'hello' queue from which the messages will be received
     channel.queue_declare(queue='hello')
 
     # Receive messages from 'hello' queue in the callback function

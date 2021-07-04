@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 """
 In this part of the tutorial we'll deliver a message to multiple
 consumers. This pattern is known as "publish/subscribe".

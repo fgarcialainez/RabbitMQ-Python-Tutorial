@@ -2,7 +2,7 @@
 
 """
 In this part of the tutorial we'll deliver a message to multiple consumers, being possible to
-subscribe only to a subset of the messages. This pattern is known as "publish/subscribe" with routing.
+subscribe only to a subset of them. This pattern is known as "publish/subscribe" with routing.
 
     https://www.rabbitmq.com/tutorials/tutorial-four-python.html
 """
@@ -23,7 +23,7 @@ def main():
     severity = sys.argv[1] if len(sys.argv) > 1 else 'info'
     message = ' '.join(sys.argv[2:]) or 'Hello World!'
 
-    # Publish the message to the logs exchange
+    # Publish the message to the 'direct_logs' exchange
     channel.basic_publish(exchange='direct_logs', routing_key=severity, body=str.encode(message))
     print(" [x] Sent %r:%r" % (severity, message))
 

@@ -22,7 +22,7 @@ def main():
     # Create a 'hello' queue from which the messages will received
     channel.queue_declare(queue='hello')
 
-    # Receive messages from 'hello' queue in callback function
+    # Receive messages from 'hello' queue in the callback function
     channel.basic_consume(queue='hello', on_message_callback=callback, auto_ack=True)
 
     # Enter a never-ending loop that waits for data and runs callbacks whenever necessary

@@ -22,7 +22,7 @@ def main():
     # Create the message to publish
     message = ' '.join(sys.argv[1:]) or "info: Hello World!"
 
-    # Publish the message to the logs exchange
+    # Publish the message to the 'logs' exchange
     channel.basic_publish(exchange='logs', routing_key='', body=str.encode(message))
     print(" [x] Sent %r" % message)
 

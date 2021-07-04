@@ -33,7 +33,7 @@ def main():
     # to a worker until it has processed and acknowledged the previous one
     channel.basic_qos(prefetch_count=1)
 
-    # Receive messages from 'task_queue' queue in callback function
+    # Receive messages from 'task_queue' queue in the callback function
     channel.basic_consume(queue='task_queue', on_message_callback=callback)
 
     # Enter a never-ending loop that waits for data and runs callbacks whenever necessary

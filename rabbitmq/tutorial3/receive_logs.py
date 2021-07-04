@@ -29,7 +29,7 @@ def main():
     # Indicate the exchange to send messages to the created queue (binding)
     channel.queue_bind(exchange='logs', queue=queue_name)
 
-    # Receive messages from the queue in callback function
+    # Receive messages from the queue in the callback function
     channel.basic_consume(queue=queue_name, on_message_callback=callback, auto_ack=True)
 
     # Enter a never-ending loop that waits for data and runs callbacks whenever necessary
